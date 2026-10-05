@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dealership Directory — MOTORVAULT</title>
+  <meta name="description" content="Discover verified dealership partners, view showroom locations, inspect sample inventories, and submit dealership inclusion inquiries.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- GLOBAL NAVBAR -->
+  <header>
+    <nav class="navbar-mv navbar-solid" aria-label="Main Navigation">
+      <div class="container-custom nav-wrapper">
+        <a href="index.html" class="brand-logo" aria-label="MOTORVAULT Home">
+          <svg class="brand-icon" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2L28 9v14l-12 7L4 23V9l12-7z" fill="#E76F32" stroke="#111315" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M7.5 18.5C9.2 15.8 12.2 14.2 16 14.2c3.8 0 6.8 1.6 8.5 4.3" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M10 14.5L12.5 9.5h7l2.5 5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="11.5" cy="19" r="1.6" fill="#FFFFFF"/>
+            <circle cx="20.5" cy="19" r="1.6" fill="#FFFFFF"/>
+          </svg>
+          MOTOR<span>VAULT</span>
+        </a>
+
+        <ul class="nav-links-desktop">
+          <li><a href="index.html" class="nav-link-item">Home</a></li>
+          <li><a href="vehicles.html" class="nav-link-item">Vehicles</a></li>
+          <li><a href="dealerships.html" class="nav-link-item active">Dealerships</a></li>
+          <li><a href="buying-guides.html" class="nav-link-item">Buying Guides</a></li>
+          <li><a href="about.html" class="nav-link-item">About</a></li>
+          <li><a href="contact.html" class="nav-link-item">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions-desktop">
+          <button class="btn-mv btn-primary-mv open-list-vehicle-modal">List Your Vehicle</button>
+        </div>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <nav class="mobile-menu-nav">
+      <a href="index.html" class="mobile-nav-item"><span class="nav-num">01</span> Home</a>
+      <a href="vehicles.html" class="mobile-nav-item"><span class="nav-num">02</span> Vehicles</a>
+      <a href="dealerships.html" class="mobile-nav-item active"><span class="nav-num">03</span> Dealerships</a>
+      <a href="buying-guides.html" class="mobile-nav-item"><span class="nav-num">04</span> Buying Guides</a>
+      <a href="about.html" class="mobile-nav-item"><span class="nav-num">05</span> About</a>
+      <a href="contact.html" class="mobile-nav-item"><span class="nav-num">06</span> Contact</a>
+      <a href="#" class="mobile-nav-item open-list-vehicle-modal" style="color:var(--racing-orange);"><span class="nav-num">07</span> List Your Vehicle</a>
+    </nav>
+  </div>
+
+  <main style="padding-top: 5rem;">
+
+    <!-- SECTION 01 — HERO -->
+    <section class="section-padding bg-warm-white border-bottom position-relative">
+      <div class="container-custom">
+        <div class="row align-items-center">
+          <div class="col-lg-7 reveal">
+            <span class="text-technical">Dealership Network</span>
+            <h1 class="heading-xl mt-2 mb-4">Connect With the Right Dealer.</h1>
+            <p class="lead text-muted-custom mb-4">Explore verified regional showrooms, certified pre-owned outlets, and specialized EV mobility hubs.</p>
+          </div>
+          <div class="col-lg-5 reveal">
+            <img src="assets/images/22.jpg" alt="Automotive Showroom" style="border-radius:4px; border:1px solid var(--border-light); box-shadow:var(--shadow-md); width:100%;" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02 & 03 — LOCATION SEARCH & CATEGORY FILTERS -->
+    <section class="py-4 bg-warm-white border-bottom border-top">
+      <div class="container-custom">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-5">
+            <label class="form-label-mv">Search Dealership by Location</label>
+            <input type="text" class="form-control-mv" placeholder="Enter City or Postal Code (e.g. Bengaluru, Chennai)...">
+          </div>
+          <div class="col-md-5">
+            <label class="form-label-mv">Specialized Category</label>
+            <select class="form-select-mv">
+              <option value="All">All Showrooms</option>
+              <option value="New">New Vehicles</option>
+              <option value="Used">Certified Pre-Owned</option>
+              <option value="Luxury">Luxury Vehicles</option>
+              <option value="EV">Electric Vehicle Hubs</option>
+            </select>
+          </div>
+          <div class="col-md-2 d-flex align-items-end">
+            <button class="btn-mv btn-primary-mv w-100">Filter Dealers</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04 — DEALERSHIP DIRECTORY GRID -->
+    <section class="section-padding bg-warm-white">
+      <div class="container-custom">
+        <div class="dealership-grid" id="dealershipsGridContainer">
+          <!-- Dynamically populated via main.js renderDealershipsPage() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05 — UNIQUE VIP SHOWROOM CONCIERGE & TEST DRIVE PROTOCOL -->
+    <section class="section-padding bg-white overflow-hidden">
+      <div class="container-custom">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal">
+            <div class="position-relative rounded-4 overflow-hidden border shadow-sm">
+              <img src="assets/images/11.jpg" alt="MOTORVAULT VIP Showroom Experience" class="w-100 object-fit-cover" style="height: 440px; display:block;">
+              <div class="position-absolute bottom-0 start-0 end-0 p-4" style="background: linear-gradient(180deg, transparent 0%, rgba(17, 19, 21, 0.92) 100%);">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="p-2 rounded-circle" style="background:var(--racing-orange); color:#fff; width:44px; height:44px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  </div>
+                  <div>
+                    <h4 class="h6 text-white mb-1 fw-bold">Verified Showroom Distinction</h4>
+                    <p class="small text-white-50 mb-0">Every listed showroom passes our annual 85-point dealer ethics & facilities audit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal">
+            <span class="text-technical">Exclusive Buyer Privileges</span>
+            <h2 class="heading-lg mt-2 mb-3">The MOTORVAULT VIP Showroom Concierge</h2>
+            <p class="text-muted-custom mb-4">Elevate your automotive acquisition with our verified partner concierge protocol. Experience pressure-free test drives, complete transparency, and white-glove home delivery.</p>
+
+            <div class="d-flex flex-column gap-3 mb-4">
+              <div class="p-3 rounded-3 border bg-warm-white d-flex align-items-start gap-3">
+                <div class="badge rounded-pill p-2" style="background: rgba(231,111,50,0.15); color:var(--racing-orange); font-weight:700; font-family:var(--font-heading);">01</div>
+                <div>
+                  <h4 class="h6 mb-1 fw-bold" style="color:var(--obsidian);">Priority VIP Test Drive Slots</h4>
+                  <p class="small text-muted mb-0">Skip queue wait times. Your target vehicle is fully detailed, battery pre-conditioned, and staged at the showroom entrance prior to your arrival.</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-3 border bg-warm-white d-flex align-items-start gap-3">
+                <div class="badge rounded-pill p-2" style="background: rgba(231,111,50,0.15); color:var(--racing-orange); font-weight:700; font-family:var(--font-heading);">02</div>
+                <div>
+                  <h4 class="h6 mb-1 fw-bold" style="color:var(--obsidian);">150-Point Digital Diagnostic Audit</h4>
+                  <p class="small text-muted mb-0">Access complete OBD-II electronic scan logs, paint thickness metrics, tyre tread depth data, and service history timelines instantly.</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-3 border bg-warm-white d-flex align-items-start gap-3">
+                <div class="badge rounded-pill p-2" style="background: rgba(231,111,50,0.15); color:var(--racing-orange); font-weight:700; font-family:var(--font-heading);">03</div>
+                <div>
+                  <h4 class="h6 mb-1 fw-bold" style="color:var(--obsidian);">Enclosed Doorstep Delivery Protocol</h4>
+                  <p class="small text-muted mb-0">Prefer acquiring from home? Our partner network provides climate-controlled enclosed transport right to your residence or corporate garage.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-mv btn-primary-mv" onclick="openModalById('dealerInquiryModal')">Book VIP Showroom Experience</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06 — DEALER ENQUIRY CTA -->
+    <section class="section-padding bg-warm-white text-center border-top">
+      <div class="container-custom reveal">
+        <span class="text-technical">Dealership Inclusion</span>
+        <h2 class="heading-xl mt-2 mb-3">Interested in Being Listed?</h2>
+        <p class="lead text-muted-custom max-w-700 mx-auto mb-5">Join the MOTORVAULT dealership network and showcase your active vehicle inventory to qualified automotive shoppers.</p>
+        <button class="btn-mv btn-primary-mv" onclick="openModalById('dealerInquiryModal')">Submit Dealer Enquiry</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER -->
+  <footer class="footer-mv">
+    <div class="container-custom">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo mb-3">
+            <svg class="brand-icon" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2L28 9v14l-12 7L4 23V9l12-7z" fill="#E76F32" stroke="#111315" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M7.5 18.5C9.2 15.8 12.2 14.2 16 14.2c3.8 0 6.8 1.6 8.5 4.3" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M10 14.5L12.5 9.5h7l2.5 5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="11.5" cy="19" r="1.6" fill="#FFFFFF"/>
+              <circle cx="20.5" cy="19" r="1.6" fill="#FFFFFF"/>
+            </svg>
+            MOTOR<span>VAULT</span>
+          </a>
+          <p>Find Your Drive. A modern automotive discovery portal for vehicles, dealership networks, and vehicle buying guides.</p>
+          <div class="social-links-wrap mt-3 d-flex align-items-center gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram">
+              <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="YouTube">
+              <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="X (Twitter)">
+              <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook">
+              <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vehicles.html">Vehicles Directory</a></li>
+            <li><a href="dealerships.html">Dealership Network</a></li>
+            <li><a href="buying-guides.html">Buying Guides</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About MOTORVAULT</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#" class="open-list-vehicle-modal">List Your Vehicle</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="vehicles.html">Luxury Sedans</a></li>
+            <li><a href="vehicles.html">SUVs & Crossovers</a></li>
+            <li><a href="vehicles.html">Motorcycles</a></li>
+            <li><a href="vehicles.html">Electric Vehicles</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 MOTORVAULT. All rights reserved. Frontend Demonstration Portal.</p>
+        <p style="color:var(--steel-gray);">Designed for Premium Automotive Experience</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- SECTION 05 — DEALERSHIP PROFILE MODAL -->
+  <div class="modal-mv" id="dealerModal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop-mv"></div>
+    <div class="modal-dialog-mv">
+      <div class="modal-header-mv">
+        <h3 style="font-size:1.25rem; margin:0;">Dealership Profile</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body-mv" id="dealerModalBody"></div>
+    </div>
+  </div>
+
+  <!-- DEALER ENQUIRY MODAL -->
+  <div class="modal-mv" id="dealerInquiryModal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop-mv"></div>
+    <div class="modal-dialog-mv">
+      <div class="modal-header-mv">
+        <h3 style="font-size:1.25rem; margin:0;">Dealership Network Inclusion Enquiry</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body-mv">
+        <form onsubmit="handleInquirySubmit(event)">
+          <div class="mb-3">
+            <label class="form-label-mv">Dealership Business Name</label>
+            <input type="text" class="form-control-mv" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label-mv">City / Region</label>
+            <input type="text" class="form-control-mv" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label-mv">Contact Person</label>
+            <input type="text" class="form-control-mv" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label-mv">Official Business Email</label>
+            <input type="email" class="form-control-mv" required>
+          </div>
+          <button type="submit" class="btn-mv btn-primary-mv w-100">Submit Dealership Registration Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- LISTING SUBMISSION MODAL -->
+  <div class="modal-mv" id="submitListingModal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop-mv"></div>
+    <div class="modal-dialog-mv">
+      <div class="modal-header-mv">
+        <h3 style="font-size:1.25rem; margin:0;">Submit Vehicle Listing</h3>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body-mv">
+        <form id="listingSubmissionForm">
+          <div class="row g-3 mb-3">
+            <div class="col-md-6"><label class="form-label-mv">Make</label><input type="text" class="form-control-mv" required></div>
+            <div class="col-md-6"><label class="form-label-mv">Model</label><input type="text" class="form-control-mv" required></div>
+          </div>
+          <button type="submit" class="btn-mv btn-primary-mv w-100">Submit Listing Demonstration</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
